@@ -1,0 +1,33 @@
+<p>
+  <b>Email:</b>
+  <%=h @player.email %>
+</p>
+
+<p>
+  <b>Username:</b>
+  <%=h @player.username %>
+</p>
+
+<p>
+  <b>Password salt:</b>
+  <%=h @player.password_salt %>
+</p>
+
+<p>
+  <b>Password hash:</b>
+  <%=h @player.password_hash %>
+</p>
+
+<p>
+  <b>Textmarks uid:</b>
+  <%=h @player.textmarks_uid %>
+</p>
+
+<p>
+  <b>Textmarks phone:</b>
+  <%=h @player.textmarks_phone %>
+</p>
+
+
+<%= link_to 'Edit', edit_player_path(@player) %> |
+<%= link_to 'Back', players_path %>

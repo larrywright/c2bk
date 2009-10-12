@@ -1,0 +1,36 @@
+<h1>Editing player</h1>
+
+<% form_for(@player) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </p>
+  <p>
+    <%= f.label :username %><br />
+    <%= f.text_field :username %>
+  </p>
+  <p>
+    <%= f.label :password_salt %><br />
+    <%= f.text_field :password_salt %>
+  </p>
+  <p>
+    <%= f.label :password_hash %><br />
+    <%= f.text_field :password_hash %>
+  </p>
+  <p>
+    <%= f.label :textmarks_uid %><br />
+    <%= f.text_field :textmarks_uid %>
+  </p>
+  <p>
+    <%= f.label :textmarks_phone %><br />
+    <%= f.text_field :textmarks_phone %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @player %> |
+<%= link_to 'Back', players_path %>
