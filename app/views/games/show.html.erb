@@ -1,0 +1,38 @@
+<p>
+  <b>Title:</b>
+  <%=h @game.title %>
+</p>
+
+<p>
+  <b>Geo tl lat:</b>
+  <%=h @game.geo_tl_lat %>
+</p>
+
+<p>
+  <b>Geo tl lon:</b>
+  <%=h @game.geo_tl_lon %>
+</p>
+
+<p>
+  <b>Geo br lat:</b>
+  <%=h @game.geo_br_lat %>
+</p>
+
+<p>
+  <b>Geo br lon:</b>
+  <%=h @game.geo_br_lon %>
+</p>
+
+<p>
+  <b>Start:</b>
+  <%=h @game.start %>
+</p>
+
+<p>
+  <b>Puppetmaster:</b>
+  <%=h @game.puppetmaster_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_game_path(@game) %> |
+<%= link_to 'Back', games_path %>
