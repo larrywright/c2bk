@@ -5,7 +5,7 @@ one:
   username: MyString
   password_salt: MyString
   password_hash: MyString
-  textmarks_id: 1
+  textmarks_uid: 1
   textmarks_phone: MyString
 
 two:
@@ -13,5 +13,5 @@ two:
   username: MyString
   password_salt: MyString
   password_hash: MyString
-  textmarks_id: 1
+  textmarks_uid: 1
   textmarks_phone: MyString
