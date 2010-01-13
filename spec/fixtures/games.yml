@@ -1,0 +1,19 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  title: MyString
+  geo_tl_lat: 9.99
+  geo_tl_lon: 9.99
+  geo_br_lat: 9.99
+  geo_br_lon: 9.99
+  start: 2010-01-12 18:16:19
+  puppetmaster_id: 1
+
+two:
+  title: MyString
+  geo_tl_lat: 9.99
+  geo_tl_lon: 9.99
+  geo_br_lat: 9.99
+  geo_br_lon: 9.99
+  start: 2010-01-12 18:16:19
+  puppetmaster_id: 1
