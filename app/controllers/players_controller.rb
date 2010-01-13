@@ -82,4 +82,19 @@ class PlayersController < ApplicationController
       format.xml  { head :ok }
     end
   end
+
+  # POST /signin/
+  def signin
+    @player = Player.signin
+    
+    if request.post?
+      player = Player.find(:first, :conditions => ['username = ?', params[:username]])
+      if user.blank? ||
+        Digest::SHA256.hexdigest(params[:password] + user.password_salt) != user.password_has
+        raise "Username or password invalid"
+      end
+      session[:player] = player.id
+      redirect_to :action => session[:indended_action], :controller => session[:intended_controller]
+    end
+  end
 end

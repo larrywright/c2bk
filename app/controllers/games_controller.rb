@@ -1,4 +1,14 @@
 class GamesController < ApplicationController
+  before_filter :check_authentication, :except => [:index, :show]
+  
+  def check_authentication 
+    unless session[:player]
+      session[:intended_action] = action_name
+      session[:intended_controller] = controller_name
+      redirect_to :action => "signin", :controller => "players"
+    end
+  end
+  
   # GET /games
   # GET /games.xml
   def index
