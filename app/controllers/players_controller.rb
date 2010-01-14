@@ -41,6 +41,7 @@ class PlayersController < ApplicationController
   # POST /players.xml
   def create
     @player = Player.new(params[:player])
+    @player.password = @player.password_hash
 
     respond_to do |format|
       if @player.save
@@ -83,7 +84,7 @@ class PlayersController < ApplicationController
     end
   end
 
-  # POST /signin/
+  # POST /players/signin/
   def signin
     @player = Player.signin
     

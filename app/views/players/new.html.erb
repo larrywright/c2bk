@@ -12,12 +12,8 @@
     <%= f.text_field :username %>
   </p>
   <p>
-    <%= f.label :password_salt %><br />
-    <%= f.text_field :password_salt %>
-  </p>
-  <p>
     <%= f.label :password_hash %><br />
-    <%= f.text_field :password_hash %>
+    <%= f.password_field :password_hash %>
   </p>
   <p>
     <%= f.label :textmarks_uid %><br />
