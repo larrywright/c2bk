@@ -41,7 +41,11 @@ class PlayersController < ApplicationController
   # POST /players.xml
   def create
     @player = Player.new(params[:player])
-    @player.password = @player.password_hash
+    if @player.password_hash == @player.password_salt
+      @player.password = @player.password_hash
+    else
+      flash[:notice] = 'passwords dont match'
+    end
 
     respond_to do |format|
       if @player.save
@@ -59,9 +63,22 @@ class PlayersController < ApplicationController
   # PUT /players/1.xml
   def update
     @player = Player.find(params[:id])
+    
+    if params[:player][:password_hash] != params[:player][:password_salt]
+      errors = true
+      flash[:notice] = 'Passwords unmatched'
+    else
+      password = params[:player][:password_hash]
+      params[:player].delete('password_hash')
+      params[:player].delete('password_salt')
+    end
 
     respond_to do |format|
-      if @player.update_attributes(params[:player])
+      if !errors && @player.update_attributes(params[:player])
+        if password != ''
+          @player.password = password
+          @player.save
+        end
         flash[:notice] = 'Player was successfully updated.'
         format.html { redirect_to(@player) }
         format.xml  { head :ok }

@@ -12,12 +12,15 @@
     <%= f.text_field :username %>
   </p>
   <p>
-    <%= f.label :password_salt %><br />
-    <%= f.text_field :password_salt %>
+    <%= f.label 'Enter Password' %><br />
+    <%= f.password_field :password_salt %>
   </p>
   <p>
-    <%= f.label :password_hash %><br />
-    <%= f.text_field :password_hash %>
+    <%= f.label 'Verify Password' %><br />
+    <%= f.password_field :password_hash %>
+  </p>
+  <p>
+    <i>Leave both password fields blank to leave password unchanged</i>
   </p>
   <p>
     <%= f.label :textmarks_uid %><br />
